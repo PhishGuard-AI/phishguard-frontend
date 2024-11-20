@@ -28,7 +28,9 @@ function App() {
       setResult(response.data);
     } catch (error) {
       console.error('Error:', error);
-      setError(error.response?.data || 'An error occurred while analyzing the URL');
+      // Update the error state with a relevant error message
+      const errorMessage = error.response?.data?.error || 'An error occurred while analyzing the URL';
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
