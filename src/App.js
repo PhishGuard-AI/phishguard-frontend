@@ -24,7 +24,7 @@ function App() {
     const formattedUrl = formatUrl(url);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/analyze/', { url: formattedUrl });
+      const response = await axios.post('http://98.81.3.93:8000/api/analyze/', { url: formattedUrl });
       setResult(response.data);
     } catch (error) {
       console.error('Error:', error);
